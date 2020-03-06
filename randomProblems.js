@@ -40,4 +40,27 @@ let arrayToList = arr => {
 }
 
 L = [1, 2, 3]
-console.log(arrayToList(L))
+// console.log(arrayToList(L))
+
+let listToArray = list =>{
+    arr = []
+    for(let node = list; node; node = node.rest){
+        arr.push(node.value)
+    }
+    return arr
+}
+
+
+function unless(test, then){
+    if(test){
+        console.log("success")
+    }else{
+        then()
+    }
+}
+
+function fail(){
+    console.log("failed")
+}
+
+unless(3==13, fail)
