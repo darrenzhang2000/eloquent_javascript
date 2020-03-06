@@ -18,13 +18,26 @@ function solution(num) {
 // console.log(solution(13))
 
 let range = (start, end, step) => {
-    if(step === undefined)
-        step = 1
-    let arr = []    
-    for(let i = start; i < end; i += step){
+    if (step === undefined) step = 1
+    let arr = []
+    for (let i = start; i < end; i += step) {
         arr.push(i)
     }
-    return arr;
+    return arr
 }
 
-console.log(range(1, 10, 2))
+// console.log(range(1, 10, 2))
+
+let arrayToList = arr => {
+    list = null
+    for (i = arr.length; i >= 0; i--) {
+        list = {
+            value: arr[i],
+            rest: list
+        }
+    }
+    return list 
+}
+
+L = [1, 2, 3]
+console.log(arrayToList(L))
