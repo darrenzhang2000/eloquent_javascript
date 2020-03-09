@@ -72,5 +72,20 @@ let flattening = (array2d) =>{
 } 
 
 var flatten1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-console.log(flattening(flatten1))
+// console.log(flattening(flatten1))
+
+let loop = (start, test, update, body) =>{
+    for(let value = start; test(value); value = update(value)){
+        body(value)
+    }
+}
+
+
+// function loop(start, test, update, body) {
+//     for (let value = start; test(value); value = update(value)) {
+//       body(value);
+//     }
+//   }
+  
+loop(3, n => n > 0, n => n - 1, console.log);
 
