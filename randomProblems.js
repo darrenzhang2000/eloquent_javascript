@@ -61,16 +61,16 @@ function fail(){
     console.log("failed")
 }
 
-for(let i = 0; i < 10; i++){
-    unless(i % 3 !== 0, ()=>{
-        console.log(`${i} is divisible by 3`)
-    })
-}
+// for(let i = 0; i < 10; i++){
+//     unless(i % 3 !== 0, ()=>{
+//         console.log(`${i} is divisible by 3`)
+//     })
+// }
 
 let flattening = (array2d) =>{
-    let result = []
-    array2d.reduce(arr =>{
-        result.concat(arr)
-    })
-    return result
+    return array2d.reduce((result, curArr) => result.concat(curArr), [])  
 } 
+
+var flatten1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+console.log(flattening(flatten1))
+
