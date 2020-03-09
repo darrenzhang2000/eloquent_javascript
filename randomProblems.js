@@ -52,9 +52,7 @@ let listToArray = list =>{
 
 
 function unless(test, then){
-    if(test){
-        console.log("success")
-    }else{
+    if(!test){
         then()
     }
 }
@@ -63,4 +61,16 @@ function fail(){
     console.log("failed")
 }
 
-unless(3==13, fail)
+for(let i = 0; i < 10; i++){
+    unless(i % 3 !== 0, ()=>{
+        console.log(`${i} is divisible by 3`)
+    })
+}
+
+let flattening = (array2d) =>{
+    let result = []
+    array2d.reduce(arr =>{
+        result.concat(arr)
+    })
+    return result
+} 
