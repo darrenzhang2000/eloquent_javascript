@@ -1,0 +1,34 @@
+<body>
+    <h1>Build a Table </h1>
+
+</body>
+
+<script>
+    let buildTable = mountains => {
+        let table = document.createElement('table')
+
+        //make header row
+        tableRow = document.createElement('tr')
+
+        //make td with name, height, place
+        data1 = document.createElement('td')
+        text1 = document.createTextNode('name')
+        data1.appendChild(text1)
+
+        data2 = document.createElement('td')
+        text2 = document.createTextNode('height')
+        data2.appendChild(text2)
+
+        data3 = document.createElement('td')
+        text3 = document.createTextNode('place')
+        data3.appendChild(text3)
+
+        //add td to rows
+        tableRow.appendChild(data1)
+        tableRow.appendChild(data2)
+        tableRow.appendChild(data3)
+
+        return table
+    }
+
+</script>
