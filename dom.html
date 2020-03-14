@@ -11,19 +11,19 @@
         let tableRow = document.createElement('tr')
 
         //make td with name, height, place
-        let data1 = document.createElement('td')
+        let data1 = document.createElement('th')
         let text1 = document.createTextNode('name')
         data1.appendChild(text1)
 
-        let data2 = document.createElement('td')
+        let data2 = document.createElement('th')
         let text2 = document.createTextNode('height')
         data2.appendChild(text2)
 
-        let data3 = document.createElement('td')
+        let data3 = document.createElement('th')
         let text3 = document.createTextNode('place')
         data3.appendChild(text3)
 
-        //add td to rows
+        //add th to rows
         tableRow.appendChild(data1)
         tableRow.appendChild(data2)
         tableRow.appendChild(data3)
@@ -64,15 +64,21 @@
             place: 'Tanzania'
         },
         {
-            name: "Kilimanjaro",
+            name: "Gooseberries",
             height: 5895,
-            place: 'Tanzania'
+            place: 'China'
         },
         {
-            name: "Kilimanjaro",
+            name: "Grapefruit",
             height: 5895,
-            place: 'Tanzania'
+            place: 'India'
         }
     ]))
-
+    document.getElementsByTagName('table')[0].setAttribute('id', 'mountains')
+    for(let i = 0; i < document.getElementsByTagName('tr').length; i++){
+        document.getElementsByTagName('tr')[i].style.textAlign = 'right'
+    }
+    for(let i = 0; i < document.getElementsByTagName('tr').length; i++){
+        document.getElementsByTagName('tr')[i].style.textAlign = 'right'
+    }
 </script>
