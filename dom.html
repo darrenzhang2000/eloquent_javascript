@@ -8,19 +8,19 @@
         let table = document.createElement('table')
 
         //make header row
-        tableRow = document.createElement('tr')
+        let tableRow = document.createElement('tr')
 
         //make td with name, height, place
-        data1 = document.createElement('td')
-        text1 = document.createTextNode('name')
+        let data1 = document.createElement('td')
+        let text1 = document.createTextNode('name')
         data1.appendChild(text1)
 
-        data2 = document.createElement('td')
-        text2 = document.createTextNode('height')
+        let data2 = document.createElement('td')
+        let text2 = document.createTextNode('height')
         data2.appendChild(text2)
 
-        data3 = document.createElement('td')
-        text3 = document.createTextNode('place')
+        let data3 = document.createElement('td')
+        let text3 = document.createTextNode('place')
         data3.appendChild(text3)
 
         //add td to rows
@@ -28,7 +28,51 @@
         tableRow.appendChild(data2)
         tableRow.appendChild(data3)
 
+        table.appendChild(tableRow)
+
+        for (mountain of mountains) {
+            //create textnodes
+            let name = document.createTextNode(mountain.name)
+            let height = document.createTextNode(mountain.height)
+            let place = document.createTextNode(mountain.place)
+
+            //create data cells
+            let td1 = document.createElement('td')
+            let td2 = document.createElement('td')
+            let td3 = document.createElement('td')
+
+            //append textnodes to data cells
+            td1.appendChild(name)
+            td2.appendChild(height)
+            td3.appendChild(place)
+            
+            //create and append data cells to table row
+            let row = document.createElement('tr')
+            row.appendChild(td1)
+            row.appendChild(td2)
+            row.appendChild(td3)
+            
+            //append row to table
+            table.appendChild(row)
+        }
         return table
     }
+    document.body.appendChild(buildTable([
+        {
+            name: "Kilimanjaro",
+            height: 5895,
+            place: 'Tanzania'
+        },
+        {
+            name: "Kilimanjaro",
+            height: 5895,
+            place: 'Tanzania'
+        },
+        {
+            name: "Kilimanjaro",
+            height: 5895,
+            place: 'Tanzania'
+        }
+    ]))
 
 </script>
