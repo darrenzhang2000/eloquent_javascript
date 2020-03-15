@@ -1,0 +1,26 @@
+<div>
+    <h1>Grapes</h1>
+    <p>Guava</p>
+    <div><p>Honeydew Melon</p></div>
+    <p>Jackfruit</p>
+    <p>Java-Plum</p>
+</div>
+<script>
+let elementsByTagName = (node, str) =>{
+    if(!node)   return
+    let elementsList = []
+    var stack = newStack()
+    stack.push(node)
+    while(!node.isEmpty()){
+        let top = stack.pop()
+        if(top.nodeName.lower() === str)
+            elementsList.push(top)
+        let children = Array.from(top.childNodes())
+        for(child of children){
+            stack.push(child)
+        }
+
+    }
+    return elementsList
+}
+</script>
