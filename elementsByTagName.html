@@ -6,21 +6,37 @@
     <p>Java-Plum</p>
 </div>
 <script>
-let elementsByTagName = (node, str) =>{
-    if(!node)   return
-    let elementsList = []
-    var stack = newStack()
-    stack.push(node)
-    while(!node.isEmpty()){
-        let top = stack.pop()
-        if(top.nodeName.lower() === str)
-            elementsList.push(top)
-        let children = Array.from(top.childNodes())
-        for(child of children){
-            stack.push(child)
-        }
+// let elementsByTagName = (node, str) =>{
+//     if(!node)   return
+//     let elementsList = []
+//     var stack = newStack()
+//     stack.push(node)
+//     while(!node.isEmpty()){
+//         let top = stack.pop()
+//         if(top.nodeName.lower() === str)
+//             elementsList.push(top)
+//         let children = Array.from(top.childNodes())
+//         for(child of children){
+//             stack.push(child)
+//         }
 
+//     }
+//     return elementsList
+// }
+
+let elementsByTagName = (node, str) =>{
+    let elementsList = []
+    function helper(node){
+        if(node.nodeName === str.toUpperCase()){
+            elementsList.push(node)
+        }
+        for(let i = 0; i < node.childNodes.length; i++){
+        helper(node.childNodes[i], str)
+        };
     }
+    helper(node)
     return elementsList
 }
+
+console.log(elementsByTagName(document, 'p'))
 </script>
